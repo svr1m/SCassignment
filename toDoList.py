@@ -98,6 +98,7 @@ class ToDoList:
             print("----------------------")
         else:
             print("No tasks found matching the keyword.")
+        return results
 
     def filter_tasks(self, status=None, priority=None):
         filtered = self.tasks
@@ -113,7 +114,7 @@ class ToDoList:
             print("----------------------")
         else:
             print("No tasks found matching the filter.")
-
+        return filtered
     def save_to_file(self):
         with open(self.filename, "w") as file:
             data = [task.to_dict() for task in self.tasks]
